@@ -1,0 +1,332 @@
+/* // About pg-codenum--252 */
+
+.Main_div {
+  background: linear-gradient(90deg, #865432, #ae8357);
+  width: 100%;
+  height: 100%;
+}
+.font_white {
+  color: white;
+}
+.Togglecolor {
+  color: white;
+  background-color: white;
+}
+.font_design {
+  font-family: Open Sans;
+}
+.focus-in-expand {
+  -webkit-animation: focus-in-expand 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: focus-in-expand 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@-webkit-keyframes focus-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes focus-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+.anchortag {
+  text-decoration: none;
+}
+
+/* // card effet */
+.img_hover {
+  transition: transform 0.5s; /* Add a transition to the 'transform' property */
+
+  &:hover {
+    transform: scale(1.2); /* Apply a scale transformation on hover */
+  }
+}
+.card_hover {
+  border-radius: 10px;
+  border: 2px solid white;
+
+  /*   box-shadow: 0 0 0 2px white,
+  inset 0 0 1em #865432; /* Inset shadow for the inner background */
+  -webkit-box-shadow: 0px -4px 51px 15px rgba(0, 0, 0, 0.44);
+  -moz-box-shadow: 0px -4px 51px 15px rgba(0, 0, 0, 0.44);
+  box-shadow: 0px -4px 51px 15px rgba(0, 0, 0, 0.44);
+
+  background: linear-gradient(90deg, #865432, #ae8357);
+
+  /* // transition: transform 0.5s;
+
+  // &:hover {
+  //   transform: scale(1.1);
+  // } */
+}
+
+.card_container1 {
+  height: 90%;
+  -webkit-box-shadow: 0px -4px 51px 29px rgba(0, 0, 0, 0.44);
+  -moz-box-shadow: 0px -4px 51px 29px rgba(0, 0, 0, 0.44);
+  box-shadow: 0px -4px 51px 29px rgba(0, 0, 0, 0.44);
+  transition: transform 0.5s;
+
+  &:hover {
+    transform: scale(0.9);
+  }
+}
+
+/* navbar */
+.navbar-container {
+  transition: all 0.3s;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #26272b;
+  z-index: 3;
+  transition: background-color 0.3s, position 0.3s;
+}
+.font_hover {
+  font-family: Times;
+}
+.font_hover:hover {
+  color: sandybrown;
+}
+
+.image-with-transition {
+  transition: opacity 0.5s ease-in-out; /* Adjust the duration and easing as needed */
+}
+
+.image-with-transition:hover {
+  opacity: 0.8; /* Adjust the opacity value for the desired hover effect */
+}
+
+/* footer page */
+.site-footer {
+  background-color: #26272b;
+  padding: 45px 0 20px;
+  font-size: 15px;
+  line-height: 24px;
+  color: #737373;
+}
+.site-footer hr {
+  border-top-color: #bbb;
+  opacity: 0.5;
+}
+.site-footer hr.small {
+  margin: 20px 0;
+}
+.site-footer h6 {
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  letter-spacing: 2px;
+}
+.site-footer a {
+  color: #737373;
+}
+.site-footer a:hover {
+  color: #3366cc;
+  text-decoration: none;
+}
+.footer-links {
+  padding-left: 0;
+  list-style: none;
+}
+.footer-links li {
+  display: block;
+}
+.footer-links a {
+  color: #737373;
+}
+.footer-links a:active,
+.footer-links a:focus,
+.footer-links a:hover {
+  color: #3366cc;
+  text-decoration: none;
+}
+.footer-links.inline li {
+  display: inline-block;
+}
+.site-footer .social-icons {
+  text-align: right;
+}
+.site-footer .social-icons a {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  margin-left: 6px;
+  margin-right: 0;
+  border-radius: 100%;
+  background-color: #33353d;
+}
+.copyright-text {
+  margin: 0;
+}
+@media (max-width: 991px) {
+  .site-footer [class^="col-"] {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .site-footer {
+    padding-bottom: 0;
+  }
+  .site-footer .copyright-text,
+  .site-footer .social-icons {
+    text-align: center;
+  }
+}
+.social-icons {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.social-icons li {
+  display: inline-block;
+  margin-bottom: 4px;
+}
+.social-icons li.title {
+  margin-right: 15px;
+  text-transform: uppercase;
+  color: #96a2b2;
+  font-weight: 700;
+  font-size: 13px;
+}
+.social-icons a {
+  background-color: #eceeef;
+  color: #818a91;
+  font-size: 16px;
+  display: inline-block;
+  line-height: 44px;
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  margin-right: 8px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.social-icons a:active,
+.social-icons a:focus,
+.social-icons a:hover {
+  color: #fff;
+  background-color: #29aafe;
+}
+.social-icons.size-sm a {
+  line-height: 34px;
+  height: 34px;
+  width: 34px;
+  font-size: 14px;
+}
+.social-icons a.facebook:hover {
+  background-color: #3b5998;
+}
+.social-icons a.twitter:hover {
+  background-color: #00aced;
+}
+.social-icons a.linkedin:hover {
+  background-color: #007bb6;
+}
+.social-icons a.insta:hover {
+  background-color: #ea4c89;
+}
+@media (max-width: 767px) {
+  .social-icons li.title {
+    display: block;
+    margin-right: 0;
+    font-weight: 600;
+  }
+}
+
+/* about_pb */
+.image-with-hover {
+  transition: opacity 0.3s; /* Add a smooth transition effect */
+}
+
+.image-with-hover:hover {
+  opacity: 0.7; /* Change the opacity on hover */
+}
+.overflow-hidden {
+  overflow-x: hidden;
+  /* Add any additional styles if needed */
+}
+
+.image-row {
+  margin-bottom: 20px; /* Add spacing between rows */
+}
+
+.image {
+  transition: transform 0.2s;
+  /* Add a smooth transition effect */
+}
+
+.image:hover {
+  transform: scale(1.1); /* Scale up the image on hover */
+  cursor: pointer; /* Change the cursor to a pointer on hover */
+}
+/* // All-pg Topics style */
+.topics {
+  font-family: Script MT;
+  font-weight: bold;
+}
+/* // All-pg Head style */
+
+.head_quotes {
+  font-family: Segoe Print;
+  /* // font-family: Gabriola
+  // font-family: MV Boli;
+  // font-family: Comic Sans MS; */
+}
+.rotate {
+  transform: rotate(180deg); /* Specify the property and the angle to rotate */
+}
+
+.img-container {
+  width: 70%; /* Ensure the image takes the full width of its container */
+  max-width: 100%; /* Ensure the image doesn't exceed its container's width */
+  height: auto; /* Automatically adjust the height to maintain the aspect ratio */
+}
+
+.custom-card {
+  max-width: 300px; /* Adjust the value according to your design */
+  margin: 0 auto; /* Centers the card */
+}
+/* 
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-content {
+  display: inline-flex;
+  animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+} */
