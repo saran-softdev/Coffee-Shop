@@ -330,3 +330,9 @@
     transform: translateX(-100%);
   }
 } */
+
+@media (max-width: 576px) {
+  .m-xs-4 {
+    margin: 10px;
+  }
+}

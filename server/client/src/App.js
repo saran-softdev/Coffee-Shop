@@ -12,8 +12,8 @@ function App() {
     <div className="Main_div">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Signin />} />
-          <Route path="/home" element={<Homepg />} />
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/" element={<Homepg />} />
           <Route path="/about" element={<Aboutpg />} />
           <Route path="/ourmenu" element={<Ourmenu />} />
           <Route path="/gallery" element={<Gallerypg />} />

@@ -5,18 +5,10 @@ import { faGooglePlusG } from "@fortawesome/free-brands-svg-icons";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../scss/login-signup.css";
-import {
-  loginUserEmail,
-  loginUserName,
-  loginUserImage
-} from "../Redux/ReduxUserData/UserDataAction";
-import { useDispatch } from "react-redux";
 
 function SignUp() {
   const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
-  const dispatch = useDispatch();
-  const [user, setUser] = useState(null);
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -49,7 +41,7 @@ function SignUp() {
       // Replace this with actual Axios call to the sign-in endpoint
       const response = await axios.post(signInEndpoint, data);
       console.log("Authentication Successful");
-      navigate("/home");
+      navigate("/");
     } catch (err) {
       console.error(err);
       setErrorMessage("Invalid username or password");
@@ -82,36 +74,6 @@ function SignUp() {
   const handleGoogleLogin = () => {
     window.open(`${BACKEND_URL}/auth/google`, "_self");
   };
-
-  useEffect(() => {
-    const getUser = () => {
-      fetch(`${BACKEND_URL}/auth/login/success`, {
-        method: "GET",
-        credentials: "include",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Credentials": true
-        }
-      })
-        .then((response) => {
-          if (response.status === 200) return response.json();
-          throw new Error("authentication has been failed!");
-        })
-        .then((res) => {
-          setUser(res.user);
-          console.log(res.user);
-          dispatch(loginUserName(res.user.userName));
-          dispatch(loginUserEmail(res.user.email));
-          dispatch(loginUserImage(res.user.userProfile));
-          navigate("/home");
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    };
-    getUser();
-  }, []);
 
   return (
     <div className="bg-white d-flex justify-content-center align-items-center position-absolute top-0 bottom-0 start-0 end-0">

@@ -3,6 +3,11 @@ import { Container, Button, Nav, Navbar } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { LogoutHandle } from "../Redux/ReduxUserData/UserDataAction";
 import { useNavigate } from "react-router-dom";
+import {
+  loginUserEmail,
+  loginUserName,
+  loginUserImage
+} from "../Redux/ReduxUserData/UserDataAction";
 
 function Navbars() {
   const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
@@ -41,6 +46,9 @@ function Navbars() {
       navigate("/");
     }
   };
+  const loginHandler = () => {
+    navigate("/signin");
+  };
   useEffect(() => {
     const handleScroll = () => {
       const navElement = navRef.current;
@@ -58,6 +66,34 @@ function Navbars() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+  }, []);
+
+  useEffect(() => {
+    const getUser = () => {
+      fetch(`${BACKEND_URL}/auth/login/success`, {
+        method: "GET",
+        credentials: "include",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Credentials": true
+        }
+      })
+        .then((response) => {
+          if (response.status === 200) return response.json();
+          throw new Error("authentication has been failed!");
+        })
+        .then((res) => {
+          console.log(res.user);
+          dispatch(loginUserName(res.user.userName));
+          dispatch(loginUserEmail(res.user.email));
+          dispatch(loginUserImage(res.user.userProfile));
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+    getUser();
   }, []);
 
   return (
@@ -90,7 +126,7 @@ function Navbars() {
           </div>
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto pb-2">
-              <Nav.Link href="/home" className="font_white font_hover ">
+              <Nav.Link href="/" className="font_white font_hover ">
                 Home
               </Nav.Link>
               <Nav.Link href="/about" className="font_white font_hover">
@@ -108,23 +144,31 @@ function Navbars() {
             </Nav>
             <Nav>
               {reduxUserImage && (
-                <div className="center">
+                <div className="center ">
                   <img
                     src={reduxUserImage}
                     width={40}
                     height={40}
                     alt=""
-                    className="mx-2 rounded-circle"
+                    className="mx-2 rounded-circle m-xs-4"
                   />
                 </div>
               )}
-              {reduxUserEmail && (
+              {reduxUserEmail ? (
                 <Button
                   onClick={() => {
                     logoutHandler();
                   }}
                 >
                   Logout
+                </Button>
+              ) : (
+                <Button
+                  onClick={() => {
+                    loginHandler();
+                  }}
+                >
+                  Login
                 </Button>
               )}
             </Nav>

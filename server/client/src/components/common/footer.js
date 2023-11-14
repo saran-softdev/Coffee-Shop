@@ -26,7 +26,7 @@ function Footer() {
               <h6>Quick Links</h6>
               <ul className="footer-links">
                 <li>
-                  <a href="/home">Home</a>
+                  <a href="/">Home</a>
                 </li>
                 <li>
                   <a href="/about">About us</a>
