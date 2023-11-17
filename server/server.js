@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 // Configure Express session
 app.use(
   session({
-    secret: "codevskills",
+    secret: "Coffee Shop",
     resave: false,
     saveUninitialized: false
   })
