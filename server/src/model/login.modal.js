@@ -11,13 +11,3 @@ const loginSchema = new mongoose.Schema(
 
 const loginDataModal = mongoose.model("login-user-data", loginSchema);
 module.exports = loginDataModal;
-
-
-// adTitle: "",
-//               description: "",
-//               price: "",
-//               country: "",
-//               state: "",
-//               city: "",
-//               nearby: "",
-//               phoneNumber: "",

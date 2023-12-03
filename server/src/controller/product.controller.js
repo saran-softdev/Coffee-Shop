@@ -10,7 +10,6 @@ router.get("/product-get", async (req, res) => {
 
 router.post("/product-post", async (req, res) => {
   const { productName, productImage, productPrice } = req.body;
-  console.log(req.body);
   const product_data = new productDataModel({
     productName,
     productImage,

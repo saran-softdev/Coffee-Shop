@@ -49,6 +49,7 @@ function Navbars() {
   const loginHandler = () => {
     navigate("/signin");
   };
+  
   useEffect(() => {
     const handleScroll = () => {
       const navElement = navRef.current;
